@@ -1,5 +1,6 @@
 const cf = {
-  host_name: 'http://localhost:8000'
+  // hostname: 'http://localhost:8000/api'
+  hostname: 'https://idobelieveinmiracle-vah-taka-api-ver1-01.glitch.me/api'
 }
 
 export default cf;
