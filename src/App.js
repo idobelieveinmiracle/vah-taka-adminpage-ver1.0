@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withCookies } from "react-cookie";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import cf from "./GlobalVariables";
+import {hostname} from "./GlobalVariables";
 import Axios from 'axios';
 import Navbar from './layouts/Navbar';
 import Login from "./components/Login";
@@ -18,12 +18,12 @@ class App extends Component {
     const {username, password} = cookies.cookies;
     console.log(username);
 
-    Axios.post(`${cf.hostname}/users/login`, {
+    Axios.post(`${hostname}/users/login`, {
       username,
       password
     }).then(res => {
       //console.log(res);
-      if (res.data) {
+      if (res.status === 200) {
         if (res.data.role === "Ad") {
           this.props.cookies.set('username', username);
           this.props.cookies.set('password', password);
@@ -38,13 +38,12 @@ class App extends Component {
     }).catch();
   }
 
-  login = (username, password) => {
-    
-    Axios.post(`${cf.hostname}/users/login`, {
+  login = (username, password) => {    
+    Axios.post(`${hostname}/users/login`, {
       username,
       password
     }).then(res => {
-      if (res.data) {
+      if (res.status === 200) {
         if (res.data.role === "Ad") {
           this.props.cookies.set('username', username);
           this.props.cookies.set('password', password);
