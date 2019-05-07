@@ -19,8 +19,8 @@ export default function Navbar(props) {
             <Link className="navbar-brand" to="/">Taka</Link>
           </div>
           <ul className="nav navbar-nav">
-            <li><Link to="#">Item manager</Link></li>
-            <li><Link to="#">Order manager</Link></li>
+            <li><Link to="/item_manager">Item manager</Link></li>
+            <li><Link to="/order_manager">Order manager</Link></li>
             <li>{logoutButton}</li>
           </ul>
         </div>

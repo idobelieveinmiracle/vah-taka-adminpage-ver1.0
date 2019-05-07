@@ -1,1 +1,2 @@
-export const hostname = 'https://idobelieveinmiracle-vah-taka-api-ver1-01.glitch.me/api';
+// export const hostname = 'localhost:8000/api';
+export const hostname = 'https://vah-taka.glitch.me/api';
